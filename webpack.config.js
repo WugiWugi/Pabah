@@ -30,11 +30,10 @@ module.exports = {
     }),
   ],
   devServer: {
-    static: path.resolve(__dirname, 'dist'), // Где искать файлы
-    port: 8080, // Можно изменить порт, если нужно
-    open: true, // Автооткрытие в браузере
-    hot: true, // Горячая перезагрузка
-    compress: true, // Сжатие файлов для быстроты
-    historyApiFallback: true, // Для SPA, если используешь маршрутизацию
+    static: path.resolve(__dirname, 'dist'),
+    watchFiles: ['src/**/*'], 
+    hot: true, 
+    open: true, 
+    port: 3000, 
   },
 };

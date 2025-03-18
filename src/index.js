@@ -2,6 +2,7 @@ import { home } from './js/home.js';
 import './css/header.css'
 import logo from './image/logo.svg';
 
+
 document.addEventListener('DOMContentLoaded', () => {
     home(); // Вызываем home() при загрузке страницы
 });
