@@ -18,8 +18,6 @@ export function home() {
     mainСontent.classList.add('main__content');  
     mainHome.appendChild(mainСontent);  
 
-
-
     const contentTitle = document.createElement('h1');
     contentTitle.classList.add('main__title');  
     mainСontent.appendChild(contentTitle);  

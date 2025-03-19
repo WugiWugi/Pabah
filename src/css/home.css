@@ -54,3 +54,49 @@ body {
 .main__button:hover {
     background-color: #ff1e00;
 }
+
+@media(max-width: 1320px) {
+    .main__content {
+        margin-left: 10%;
+    }
+
+    .burito {
+        right: 1%;
+        bottom: 100px;
+        height: 500px;
+    }
+}
+
+@media(max-width: 1160px) {
+    .main__content {
+        margin-left: 10%;
+    }
+
+    .burito {
+        display: none;
+    }
+
+    .bacground-element {
+        height: 430px;
+    }
+}
+
+@media(max-width: 768px) {
+    .bacground-element {
+        height: 380px;
+    }
+}
+
+@media(max-width: 707px) {
+    .main__content {
+        margin: 20% 10% 0% 10%;
+    }
+
+    .main__title {
+        font-size: 6rem;
+    }
+
+    .bacground-element {
+        height: 330px;
+    }
+}
