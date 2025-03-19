@@ -1,10 +1,9 @@
 import '../css/home.css';
-import FigureWan from '../image/Figure_1.svg'
-import FigurTwo from '../image/Figure_2.svg'
-import FigurThree from '../image/Figure_3.svg'
-import FigurFour from '../image/Figure_4.svg'
-import FigurFive from '../image/Figure_5.svg'
-import burito from '../image/burito.png'
+import Bacground from '../image/Bacground.svg'
+import Burito from '../image/burito.svg'
+import User from '../image/User.svg'
+import Lupa from '../image/Lupa.svg'
+import Corzina from '../image/Corzina.svg'
 
 export function home() {
     const content = document.querySelector('#content');
@@ -15,40 +14,32 @@ export function home() {
     mainHome.classList.add('main');
     container.appendChild(mainHome);
 
-    const figureWan = document.createElement('img');
-    figureWan.src = FigureWan;
-    figureWan.alt = 'Фигура';
-    figureWan.classList.add('figure-wan');  
-    mainHome.appendChild(figureWan);  
+    const mainСontent = document.createElement('div');
+    mainСontent.classList.add('main__content');  
+    mainHome.appendChild(mainСontent);  
 
 
-    const figureTwo = document.createElement('img');
-    figureTwo.src = FigurTwo;
-    figureTwo.alt = 'Фигура';
-    figureTwo.classList.add('figure-two');  
-    mainHome.appendChild(figureTwo);  
 
-    const figurethree = document.createElement('img');
-    figurethree.src = FigurThree;
-    figurethree.alt = 'Фигура';
-    figurethree.classList.add('figure-three');  
-    mainHome.appendChild(figurethree);  
+    const contentTitle = document.createElement('h1');
+    contentTitle.classList.add('main__title');  
+    mainСontent.appendChild(contentTitle);  
+    contentTitle.innerHTML  = 'HUNGRY? <br> ORDER FROM US!'
 
-    const figurefour = document.createElement('img');
-    figurefour.src = FigurFour;
-    figurefour.alt = 'Фигура';
-    figurefour.classList.add('figure-four');  
-    mainHome.appendChild(figurefour);  
 
-    const figurefive = document.createElement('img');
-    figurefive.src = FigurFive;
-    figurefive.alt = 'Фигура';
-    figurefive.classList.add('figure-five');  
-    mainHome.appendChild(figurefive);  
+    const contentButton = document.createElement('button');
+    contentButton.classList.add('main__button');  
+    mainСontent.appendChild(contentButton);  
+    contentButton.textContent = `ORDER NOW!`
 
-    const Burito = document.createElement('img');
-    Burito.src = burito;
-    Burito.alt = 'бУРИТО';
-    Burito.classList.add('burito');  
-    mainHome.appendChild(Burito);  
+    const burito = document.createElement('img');
+    burito.src = Burito;
+    burito.alt = 'бурито';
+    burito.classList.add('burito');  
+    mainHome.appendChild(burito);  
+
+    const bacgroundElement = document.createElement('img');
+    bacgroundElement.src = Bacground;
+    bacgroundElement.alt = 'Фоновый элемент';
+    bacgroundElement.classList.add('bacground-element');  
+    mainHome.appendChild(bacgroundElement);  
 }
