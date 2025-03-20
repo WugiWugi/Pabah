@@ -1,4 +1,4 @@
-body{
+body {
     background-color: antiquewhite;
 }
 
@@ -6,25 +6,33 @@ body{
     margin-top: 100px;
     display: grid;
     gap: 8%;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Автоматически заполняет строки */
-    width: 100%; 
-margin-bottom: 100px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    width: 100%;
 
-  }
-  
-.main__burger{
+
+}
+
+.main__burger {
     height: 100%;
     width: 100%;
+    display: block;
+    transition: all 0.5s ease;
 }
 
-.main__container-burgers-bottom{
+.main__burger:hover{
+    transform: scale(1.1);
+}
+
+.main__container-burgers-bottom {
+    grid-column: 1 / -1; 
     display: flex;
     justify-content: center;
-    margin: 40px;
 }
 
+
+
 .main__burgers-bottom {
-    margin-top: 30px;
+    margin-bottom: 50px;
     padding: 10px 60px;
     font-size: 2rem;
     font-weight: 700;
@@ -39,4 +47,10 @@ margin-bottom: 100px;
 
 .main__burgers-bottom:hover {
     background-color: #ff1e00;
+}
+
+.main__footer-element {
+    margin-top: 150px;
+    display: block;
+    width: 100%;
 }
