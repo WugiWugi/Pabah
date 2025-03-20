@@ -1,0 +1,42 @@
+body{
+    background-color: antiquewhite;
+}
+
+.main {
+    margin-top: 100px;
+    display: grid;
+    gap: 8%;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Автоматически заполняет строки */
+    width: 100%; 
+margin-bottom: 100px;
+
+  }
+  
+.main__burger{
+    height: 100%;
+    width: 100%;
+}
+
+.main__container-burgers-bottom{
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
+
+.main__burgers-bottom {
+    margin-top: 30px;
+    padding: 10px 60px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: aliceblue;
+    background-color: #FE6A14;
+    border-radius: 20px;
+    border: 3px solid black;
+    box-shadow: -5px 5px 0px black;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.main__burgers-bottom:hover {
+    background-color: #ff1e00;
+}

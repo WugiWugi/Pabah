@@ -1,9 +1,7 @@
 import '../css/home.css';
-import Bacground from '../image/Bacground.svg'
-import Burito from '../image/burito.svg'
-import User from '../image/User.svg'
-import Lupa from '../image/Lupa.svg'
-import Corzina from '../image/Corzina.svg'
+import bacgrounds from '../image/Bacground.svg'
+import buritos from '../image/burito.svg'
+
 
 export function home() {
     const content = document.querySelector('#content');
@@ -30,13 +28,13 @@ export function home() {
     contentButton.textContent = `ORDER NOW!`
 
     const burito = document.createElement('img');
-    burito.src = Burito;
+    burito.src = buritos;
     burito.alt = 'бурито';
     burito.classList.add('burito');  
     mainHome.appendChild(burito);  
 
     const bacgroundElement = document.createElement('img');
-    bacgroundElement.src = Bacground;
+    bacgroundElement.src = bacgrounds;
     bacgroundElement.alt = 'Фоновый элемент';
     bacgroundElement.classList.add('bacground-element');  
     mainHome.appendChild(bacgroundElement);  
