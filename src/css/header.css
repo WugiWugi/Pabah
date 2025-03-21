@@ -26,7 +26,7 @@
 
 
 
-.element svg path{
+.element svg path {
     transition: all 0.2s ease;
 }
 
@@ -34,7 +34,7 @@
     fill: #FE6A14;
 }
 
-.element-2 svg path{
+.element-2 svg path {
     fill: #063A23;
     transition: all 0.2s ease;
 }
@@ -48,6 +48,67 @@
     width: 35px;
 }
 
+.element-corzina {
+    position: relative;
+}
+
+.elementCorzina__number-of-burgers {
+    position: absolute;
+    right: -9px;
+    top: -8px;
+    min-width: 22px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background-color: #063A23;
+    color: aliceblue;
+}
+
+.elementCorzina__corzin {
+    position: absolute;
+    right: 0px;
+    border-radius: 10%;
+    border: 3px solid #151f1a;
+    box-shadow: -5px 5px 0px #151f1a;
+    max-height: 300px;
+    width: 200px;
+    padding: 20px 20px 0px 20px;
+    background-color: #063A23;
+    z-index: 2;
+    overflow-y: auto;
+    display: none
+}
+
+.open-corzin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.elementCorzina__product{
+color: aliceblue;
+}
+
+.elementCorzina__prise{
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: aliceblue
+}
+
+.elementCorzina__button-corzin{
+width: 100%;
+font-size: 1.2rem;
+padding: 5px 0px;
+font-weight: 700;
+color: aliceblue;
+background-color: #FE6A14;
+border-radius: 10px;
+transition: all 0.2s ease;
+}
+
+.elementCorzina__button-corzin:hover {
+    background-color: #ff1e00;
+}
 
 
 .header__nav-container {

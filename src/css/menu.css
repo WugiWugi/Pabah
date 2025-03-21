@@ -8,8 +8,6 @@ body {
     gap: 8%;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     width: 100%;
-
-
 }
 
 .main__burger {
@@ -17,6 +15,8 @@ body {
     width: 100%;
     display: block;
     transition: all 0.5s ease;
+    z-index: 1;
+    cursor: pointer;
 }
 
 .main__burger:hover{
@@ -53,4 +53,5 @@ body {
     margin-top: 150px;
     display: block;
     width: 100%;
+    z-index: -1;
 }

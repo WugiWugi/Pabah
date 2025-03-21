@@ -18,7 +18,7 @@ export function menu() {
 
 
     function renderBurgers() {
-        // Очищаем контейнер перед добавлением новых бургеров
+
         mainMenu.innerHTML = '';
 
         for (let i = 0; i < numberOfBurgers; i++) {
@@ -28,6 +28,7 @@ export function menu() {
             burger.classList.add('main__burger');
             mainMenu.appendChild(burger);
         }
+        
         if (numberOfBurgers === 16) {
             const footerElement = document.createElement('img');
             footerElement.src = mainFooterElement;
@@ -38,7 +39,7 @@ export function menu() {
 
     }
 
-    // Создаём начальные 8 бургеров
+
     renderBurgers();
 
     const mainbuttom = document.createElement('div');

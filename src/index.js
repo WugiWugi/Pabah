@@ -41,7 +41,7 @@ headerUl.appendChild(homeItem)
 const homeLink = document.createElement('a')
 homeLink.classList.add('home', 'link')
 homeItem.appendChild(homeLink)
-homeLink.textContent='Home'
+homeLink.textContent = 'Home'
 homeLink.href = '#'
 
 
@@ -52,7 +52,7 @@ headerUl.appendChild(menuItem)
 const menuLink = document.createElement('a')
 menuLink.classList.add('menu', 'link')
 menuItem.appendChild(menuLink)
-menuLink.textContent='Menu'
+menuLink.textContent = 'Menu'
 menuLink.href = '#'
 
 
@@ -63,7 +63,7 @@ headerUl.appendChild(contactsItem)
 const contactsLink = document.createElement('a')
 contactsLink.classList.add('contacts', 'link')
 contactsItem.appendChild(contactsLink)
-contactsLink.textContent='Contacts'
+contactsLink.textContent = 'Contacts'
 contactsLink.href = '#'
 
 const logotip = document.createElement('img')
@@ -103,7 +103,7 @@ elementUser.appendChild(imgUser);
 
 const elementCorzina = document.createElement('a');
 elementCorzina.href = '#';
-elementCorzina.classList.add('element');
+elementCorzina.classList.add('element', 'element-corzina');
 navContainer.appendChild(elementCorzina);
 const imgCorzina = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 imgCorzina.setAttribute('viewBox', '0 0 27 25');
@@ -112,3 +112,50 @@ pathCorzina.setAttribute('d', 'M0 0.892857C0 0.39975 0.402944 0 0.899999 0H3.6C4
 pathCorzina.setAttribute('fill', '#063A23');
 imgCorzina.appendChild(pathCorzina);
 elementCorzina.appendChild(imgCorzina);
+let burgers = 0;
+function burgerOfCorzine() {
+    document.addEventListener('DOMContentLoaded', () => {
+        elementCorzina.addEventListener('click', () => openCorzin.classList.toggle('open-corzin'));
+        let number = 0;
+        let burgers = 0;
+
+        const burgersInTheBasket = document.createElement('span');
+        burgersInTheBasket.setAttribute("aria-label", "Количество товаров в корзине");
+        burgersInTheBasket.classList.add('elementCorzina__number-of-burgers');
+        elementCorzina.appendChild(burgersInTheBasket);
+
+        const openCorzin = document.createElement('div');
+        openCorzin.classList.add('elementCorzina__corzin');
+        elementCorzina.appendChild(openCorzin);
+
+        const corzinPrise = document.createElement('p');
+        corzinPrise.classList.add('elementCorzina__prise');
+        openCorzin.appendChild(corzinPrise);
+
+        const buttonCorzin = document.createElement('button');
+        buttonCorzin.classList.add('elementCorzina__button-corzin');
+        buttonCorzin.textContent = 'Order';
+
+        const mainMenu = document.querySelector('.main__burger');
+        mainMenu.addEventListener('click', () => {
+            
+            burgersInTheBasket.textContent = number < 99 ? ++number : `+${number}`;
+            ++burgers
+            openCorzin.innerHTML = '';
+            const price = 140;
+            for (let i = 0; i < burgers; i++) {
+                const product = document.createElement('p');
+                product.classList.add('elementCorzina__product');
+                product.textContent = `Бургер - ${price}р`;
+                openCorzin.appendChild(product);
+            }
+            corzinPrise.textContent = `Итого: ${price * burgers}р`;
+            openCorzin.appendChild(corzinPrise);
+            if(burgers > 0){
+            openCorzin.appendChild(buttonCorzin);
+            }
+        });
+    });
+}
+
+burgerOfCorzine()
