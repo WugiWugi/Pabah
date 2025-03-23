@@ -2,8 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development', // Изменено на development для devServer
+  mode: 'production', 
   entry: './src/index.js',
+  performance: {
+    hints: false, 
+  },
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
@@ -26,7 +29,8 @@ module.exports = {
       template: './src/index.html',
       filename: 'index.html',
       inject: 'body', 
-      scriptLoading: 'defer', 
+      scriptLoading: 'defer',
+      favicon: './src/image/logo.svg',
     }),
   ],
   devServer: {
@@ -34,6 +38,6 @@ module.exports = {
     watchFiles: ['src/**/*'], 
     hot: true, 
     open: true, 
-    port: 3000, 
+    port: 3008, 
   },
 };
