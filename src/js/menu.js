@@ -4,37 +4,45 @@ import gamburger from '../image/Gamburger.svg';
 import mainFooterElement from '../image/footerMenu.svg';
 
 export function menu() {
-    const content = document.querySelector('#content');
-
-    const container = document.querySelector('.container');
+    const content = document.querySelector('#content')
 
     const mainMenu = document.createElement('div');
     mainMenu.classList.add('main');
-    container.appendChild(mainMenu);
+    content.appendChild(mainMenu);
 
+    const container = document.createElement('div');
+    container.classList.add('main__menu-container')
+    mainMenu.appendChild(container);
+
+    const containerImg = document.createElement('div');
+    containerImg.classList.add('container_img')
+    container.appendChild(containerImg);
+
+    const footerContainer = document.createElement('div')
+    footerContainer.classList.add('footer-container');
+    mainMenu.appendChild(footerContainer);
 
 
     let numberOfBurgers = 8
 
-
     function renderBurgers() {
 
-        mainMenu.innerHTML = '';
+        containerImg.innerHTML = '';
 
         for (let i = 0; i < numberOfBurgers; i++) {
             const burger = document.createElement('img');
             burger.src = gamburger;
             burger.alt = 'БУРГЕР';
             burger.classList.add('main__burger');
-            mainMenu.appendChild(burger);
+            containerImg.appendChild(burger);
         }
-        
+
         if (numberOfBurgers === 16) {
             const footerElement = document.createElement('img');
             footerElement.src = mainFooterElement;
             footerElement.alt = 'Подвал';
             footerElement.classList.add('main__footer-element');
-            content.appendChild(footerElement);
+            footerContainer.appendChild(footerElement);
         }
 
     }

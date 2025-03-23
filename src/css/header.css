@@ -4,6 +4,22 @@
     font-family: "Afacad", sans-serif;
 }
 
+.body-home {
+    background-color: #063A23;
+}
+
+.logo{
+    height: 200px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.body-menu {
+    background-color: #F9E7C3;
+}
+
 .container {
     padding: 0px 233px;
 }
@@ -15,23 +31,60 @@
     padding-top: 40px;
 }
 
-
-
-.logo {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    position: relative;
+.header__nav-container {
+    display: flex;
+    gap: 50px;
 }
 
+.header__ul {
+    display: flex;
+    list-style-type: none;
+    gap: 50px;
+}
 
+.link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2.3rem;
+    transition: all 0.2s ease;
+    background: none;
+    border: none;
+}
+
+.link:hover {
+    color: #FE6A14;
+    text-shadow: 0px 0px 10px #fc9d67;
+}
+
+.link-2 {
+    color: #063A23;
+    text-decoration: none;
+    font-size: 2.3rem;
+    transition: all 0.2s ease;
+    background: none;
+    border: none;
+}
+
+.link-2:hover {
+    color: #FE6A14;
+    text-shadow: 0px 0px 10px #fc9d67;
+}
+
+.home,
+.menu,
+.contacts{
+    color: #FE6A14;
+    text-shadow: 0px 0px 10px #fc9d67;
+    text-decoration: none;
+    font-size: 2.3rem;
+    transition: all 0.2s ease;
+    background: none;
+    border: none;
+}
 
 .element svg path {
+    fill: #ffffff;
     transition: all 0.2s ease;
-}
-
-.element:hover svg path {
-    fill: #FE6A14;
 }
 
 .element-2 svg path {
@@ -39,11 +92,13 @@
     transition: all 0.2s ease;
 }
 
+.element:hover svg path,
 .element-2:hover svg path {
     fill: #FE6A14;
 }
 
-.element svg {
+.element svg,
+.element-2 svg  {
     height: 35px;
     width: 35px;
 }
@@ -60,16 +115,35 @@
     text-align: center;
     text-decoration: none;
     border-radius: 50%;
+    border: 1px solid aliceblue;
     background-color: #063A23;
     color: aliceblue;
+}
+
+.elementCorzina__number-of-burgers-new {
+    position: absolute;
+    right: -12px;
+    top: -10px;
+    min-height: 23px;
+    min-width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background-color: #063A23;
+    color: aliceblue;
+}
+
+
+.header__nav-container {
+    position: relative;
 }
 
 .elementCorzina__corzin {
     position: absolute;
     right: 0px;
-    border-radius: 10%;
+    top: 40px;
     border: 3px solid #151f1a;
-    box-shadow: -5px 5px 0px #151f1a;
+    box-shadow: -5px 3px 0px #151f1a;
     max-height: 300px;
     width: 200px;
     padding: 20px 20px 0px 20px;
@@ -79,74 +153,60 @@
     display: none
 }
 
-.open-corzin{
+.elementCorzina__corzin::-webkit-scrollbar {
+    display: none;
+}
+
+.open-corzin {
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: auto;
 }
 
-.elementCorzina__product{
-color: aliceblue;
+.elementCorzina__product {
+    color: aliceblue;
+    list-style: none;
+    font-size: 1.1rem;
 }
 
-.elementCorzina__prise{
+.elementCorzina__product-deleted {
+    margin: 10px;
+    cursor: pointer;
+    color: #FE6A14;
+    transition: all 0.2s ease;
+}
+
+.elementCorzina__product-deleted:hover {
+    color: #ff1e00;
+}
+
+
+.elementCorzina__prise {
     margin-top: 10px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 900;
     color: aliceblue
 }
 
-.elementCorzina__button-corzin{
-width: 100%;
-font-size: 1.2rem;
-padding: 5px 0px;
-font-weight: 700;
-color: aliceblue;
-background-color: #FE6A14;
-border-radius: 10px;
-transition: all 0.2s ease;
+.hidden {
+    display: none;
+}
+
+.elementCorzina__button-corzin {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 5px 0px;
+    font-weight: 700;
+    color: aliceblue;
+    background-color: #FE6A14;
+    border-radius: 10px;
+    transition: all 0.2s ease;
 }
 
 .elementCorzina__button-corzin:hover {
     background-color: #ff1e00;
 }
-
-
-.header__nav-container {
-    display: flex;
-    gap: 50px;
-}
-
-.header__ul {
-    display: flex;
-    list-style-type: none;
-    gap: 50px;
-}
-
-.link {
-    color: #063A23;
-    text-decoration: none;
-    font-size: 2.3rem;
-    transition: all 0.2s ease;
-}
-
-.link:hover {
-    color: #FE6A14;
-    text-shadow: 0px 0px 10px #fc9d67;
-}
-
-.link-2 {
-    color: #063A23;
-    text-decoration: none;
-    font-size: 2.3rem;
-    transition: all 0.2s ease;
-}
-
-.link-2:hover {
-    color: #FE6A14;
-    text-shadow: 0px 0px 10px #fc9d67;
-}
-
-
 
 @media(max-width: 1320px) {
     .container {

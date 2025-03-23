@@ -1,17 +1,12 @@
 import { home } from './js/home.js';
 import { menu } from './js/menu.js';
-
+import { contacts } from './js/contacts.js';
 import './css/header.css'
 
 import logo from './image/logo.svg';
 
-document.addEventListener('DOMContentLoaded', () => {
-    menu(); // Вызываем home() при загрузке страницы
-});
-
 const content = document.querySelector('#content')
 content.classList.add('content')
-console.log(content);
 
 const header = document.createElement('header')
 header.classList.add('header')
@@ -33,38 +28,32 @@ const headerUl = document.createElement('ul')
 headerUl.classList.add('header__ul')
 headerNav.appendChild(headerUl)
 
-
 const homeItem = document.createElement('li')
 homeItem.classList.add('item')
 headerUl.appendChild(homeItem)
 
-const homeLink = document.createElement('a')
-homeLink.classList.add('home', 'link')
+const homeLink = document.createElement('button')
+homeLink.classList.add('link')
 homeItem.appendChild(homeLink)
 homeLink.textContent = 'Home'
-homeLink.href = '#'
-
 
 const menuItem = document.createElement('li')
 menuItem.classList.add('item')
 headerUl.appendChild(menuItem)
 
-const menuLink = document.createElement('a')
-menuLink.classList.add('menu', 'link')
+const menuLink = document.createElement('button')
+menuLink.classList.add('link')
 menuItem.appendChild(menuLink)
 menuLink.textContent = 'Menu'
-menuLink.href = '#'
-
 
 const contactsItem = document.createElement('li')
 contactsItem.classList.add('item')
 headerUl.appendChild(contactsItem)
 
-const contactsLink = document.createElement('a')
-contactsLink.classList.add('contacts', 'link')
+const contactsLink = document.createElement('button')
+contactsLink.classList.add('link')
 contactsItem.appendChild(contactsLink)
 contactsLink.textContent = 'Contacts'
-contactsLink.href = '#'
 
 const logotip = document.createElement('img')
 logotip.src = logo
@@ -78,7 +67,6 @@ navContainer.classList.add('header__nav-container')
 headerContainer.appendChild(navContainer)
 
 const elementLupa = document.createElement('a')
-elementLupa.href = '#'
 elementLupa.classList.add('element')
 navContainer.appendChild(elementLupa)
 const imgLupa = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -90,7 +78,6 @@ imgLupa.appendChild(pathLupa);
 elementLupa.appendChild(imgLupa);
 
 const elementUser = document.createElement('a')
-elementUser.href = '#'
 elementUser.classList.add('element')
 navContainer.appendChild(elementUser)
 const imgUser = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -102,7 +89,7 @@ imgUser.appendChild(pathUser);
 elementUser.appendChild(imgUser);
 
 const elementCorzina = document.createElement('a');
-elementCorzina.href = '#';
+
 elementCorzina.classList.add('element', 'element-corzina');
 navContainer.appendChild(elementCorzina);
 const imgCorzina = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -112,50 +99,174 @@ pathCorzina.setAttribute('d', 'M0 0.892857C0 0.39975 0.402944 0 0.899999 0H3.6C4
 pathCorzina.setAttribute('fill', '#063A23');
 imgCorzina.appendChild(pathCorzina);
 elementCorzina.appendChild(imgCorzina);
-let burgers = 0;
-function burgerOfCorzine() {
-    document.addEventListener('DOMContentLoaded', () => {
-        elementCorzina.addEventListener('click', () => openCorzin.classList.toggle('open-corzin'));
-        let number = 0;
-        let burgers = 0;
 
-        const burgersInTheBasket = document.createElement('span');
-        burgersInTheBasket.setAttribute("aria-label", "Количество товаров в корзине");
-        burgersInTheBasket.classList.add('elementCorzina__number-of-burgers');
-        elementCorzina.appendChild(burgersInTheBasket);
 
-        const openCorzin = document.createElement('div');
-        openCorzin.classList.add('elementCorzina__corzin');
-        elementCorzina.appendChild(openCorzin);
 
-        const corzinPrise = document.createElement('p');
-        corzinPrise.classList.add('elementCorzina__prise');
-        openCorzin.appendChild(corzinPrise);
+function pages() {
+    home();
 
-        const buttonCorzin = document.createElement('button');
-        buttonCorzin.classList.add('elementCorzina__button-corzin');
-        buttonCorzin.textContent = 'Order';
+    homeItem.addEventListener('click', () => {
+        document.querySelector('.main').remove();
+        home();
+        document.body.classList.replace('body-menu', 'body-home');
 
-        const mainMenu = document.querySelector('.main__burger');
-        mainMenu.addEventListener('click', () => {
-            
-            burgersInTheBasket.textContent = number < 99 ? ++number : `+${number}`;
-            ++burgers
-            openCorzin.innerHTML = '';
-            const price = 140;
-            for (let i = 0; i < burgers; i++) {
-                const product = document.createElement('p');
-                product.classList.add('elementCorzina__product');
-                product.textContent = `Бургер - ${price}р`;
-                openCorzin.appendChild(product);
-            }
-            corzinPrise.textContent = `Итого: ${price * burgers}р`;
-            openCorzin.appendChild(corzinPrise);
-            if(burgers > 0){
-            openCorzin.appendChild(buttonCorzin);
-            }
+
+        document.querySelectorAll('.link-2').forEach(el => {
+            el.classList.replace('link-2', 'link');
+        });
+
+        homeLink.classList.replace('link', 'home')
+        menuLink.classList.replace('menu', 'link')
+        contactsLink.classList.replace('contacts', 'link')
+
+        document.querySelectorAll('.element-2').forEach(el => {
+            el.classList.replace('element-2', 'element');
+        });
+
+    });
+
+    menuItem.addEventListener('click', () => {
+        document.querySelector('.main').remove();
+        menu();
+        document.body.classList.replace('body-home', 'body-menu');
+
+        menuLink.classList.replace('link', 'menu')
+        homeLink.classList.replace('home', 'link-2')
+        contactsLink.classList.replace('contacts', 'link-2')
+
+        document.querySelectorAll('.link').forEach(el => {
+            el.classList.replace('link', 'link-2');
+        });
+
+        document.querySelectorAll('.element').forEach(el => {
+            el.classList.replace('element', 'element-2');
         });
     });
+
+    contactsItem.addEventListener('click', () => {
+        document.querySelector('.main').remove();   
+        contacts();
+        document.body.classList.replace('body-menu', 'body-home');
+
+
+        document.querySelectorAll('.link-2').forEach(el => {
+            el.classList.replace('link-2', 'link');
+        });
+
+        homeLink.classList.replace('home', 'link')
+        menuLink.classList.replace('menu', 'link')
+        contactsLink.classList.replace('link', 'contacts')
+        
+        document.querySelectorAll('.element-2').forEach(el => {
+            el.classList.replace('element-2', 'element');
+        });
+    });
+
+
+    document.addEventListener('click', (event) => {
+        if (event.target.classList.contains('main__button')) {
+        document.querySelector('.main').remove();
+        menu();
+        document.body.classList.replace('body-home', 'body-menu');
+
+        menuLink.classList.replace('link', 'menu')
+        homeLink.classList.replace('home', 'link-2')
+
+        document.querySelectorAll('.link').forEach(el => {
+            el.classList.replace('link', 'link-2');
+        });
+
+        document.querySelectorAll('.element').forEach(el => {
+            el.classList.replace('element', 'element-2');
+        });
+        
+    }})
+
+
+homeLink.classList.replace('link', 'home')
+document.body.classList.add('body-home')
+}
+pages()
+
+
+
+function burgerOfCorzine() {
+    let number = 0
+
+    elementCorzina.addEventListener('click', () => kaysOfcorzin.classList.toggle('open-corzin'));
+
+    const burgersInTheBasket = document.createElement('span');
+    burgersInTheBasket.setAttribute("aria-label", "Количество товаров в корзине");
+
+    const kaysOfcorzin = document.createElement('div');
+    kaysOfcorzin.classList.add('elementCorzina__corzin');
+    navContainer.appendChild(kaysOfcorzin);
+
+    const listCorzin = document.createElement('ul');
+    listCorzin.classList.add('elementCorzina__list');
+    kaysOfcorzin.appendChild(listCorzin);
+
+    const corzinPrise = document.createElement('p');
+    corzinPrise.classList.add('elementCorzina__prise');
+    kaysOfcorzin.appendChild(corzinPrise);
+    const buttonCorzin = document.createElement('button');
+    buttonCorzin.classList.add('elementCorzina__button-corzin');
+
+    document.addEventListener('click', (event) => {
+
+        if (event.target.classList.contains('main__burger')) {
+            if (number < 99) {
+                burgersInTheBasket.textContent = ++number;
+                burgersInTheBasket.classList.replace('elementCorzina__number-of-burgers-new', 'elementCorzina__number-of-burgers');
+            } else {
+                burgersInTheBasket.textContent = `+${number}`;
+                burgersInTheBasket.classList.replace('elementCorzina__number-of-burgers', 'elementCorzina__number-of-burgers-new');
+            }
+            if (number > 0) {
+                burgersInTheBasket.classList.add('elementCorzina__number-of-burgers');
+            }
+            const product = document.createElement('li');
+            product.classList.add('elementCorzina__product');
+            product.textContent = 'Бургер - 140р';
+            listCorzin.appendChild(product);
+
+            const productDeleted = document.createElement('span');
+            productDeleted.classList.add('elementCorzina__product-deleted');
+            productDeleted.textContent = `X`;
+            product.appendChild(productDeleted);
+
+            kaysOfcorzin.appendChild(corzinPrise);
+
+            buttonCorzin.textContent = 'Order';
+            kaysOfcorzin.appendChild(buttonCorzin);
+
+            updatePrice();
+        }
+    });
+    document.addEventListener('click', (event) => {
+        event.stopPropagation();
+        if (event.target.classList.contains('elementCorzina__product-deleted')) {
+            const product = event.target.closest('.elementCorzina__product');
+            if (product) {
+                product.remove();
+                number--;
+                updatePrice();
+                burgersInTheBasket.textContent = number > 0 ? number : '';
+                if (number === 0) {
+                    burgersInTheBasket.remove()
+                    buttonCorzin.remove();
+                    corzinPrise.remove();
+                }
+            }
+        }
+    });
+
+    function updatePrice() {
+        if (number === 0) return;
+        elementCorzina.appendChild(burgersInTheBasket);
+        corzinPrise.textContent = `Итого: ${140 * number}р`;
+    }
 }
 
 burgerOfCorzine()
+

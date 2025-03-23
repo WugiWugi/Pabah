@@ -1,0 +1,25 @@
+.main__contacts-container{
+    margin-top: 100px;
+    padding: 0px 233px;
+}
+
+
+.containers{
+    padding: 15px 0px;
+    color: #F9E7C3;
+    font-size: 3rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom:2px solid #F9E7C3 ;
+}
+
+.contacts__footer-container{
+margin-top: 53px
+}
+
+.contacts__footer-element {
+
+    display: block;
+    width: 100%;
+    z-index: -1;
+}
