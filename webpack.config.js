@@ -2,15 +2,16 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'production', 
+  mode: 'production',
   entry: './src/index.js',
   performance: {
-    hints: false, 
+    hints: false,
   },
   output: {
-    filename: 'index.js', 
+    filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true, 
+    clean: true,
+    publicPath: "./"
   },
   module: {
     rules: [
@@ -28,16 +29,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
-      inject: 'body', 
+      inject: 'body',
       scriptLoading: 'defer',
       favicon: './src/image/logo.svg',
     }),
   ],
   devServer: {
     static: path.resolve(__dirname, 'dist'),
-    watchFiles: ['src/**/*'], 
-    hot: true, 
-    open: true, 
-    port: 3009, 
+    watchFiles: ['src/**/*'],
+    hot: true,
+    open: true,
+    port: 3009,
   },
 };
