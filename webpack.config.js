@@ -39,6 +39,6 @@ module.exports = {
     watchFiles: ['src/**/*'],
     hot: true,
     open: true,
-    port: 3009,
+    port: 3010,
   },
 };
