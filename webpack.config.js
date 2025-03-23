@@ -8,7 +8,7 @@ module.exports = {
     hints: false, 
   },
   output: {
-    filename: '[name].[contenthash].js',
+    filename: 'index.js', 
     path: path.resolve(__dirname, 'dist'),
     clean: true, 
   },
@@ -38,6 +38,6 @@ module.exports = {
     watchFiles: ['src/**/*'], 
     hot: true, 
     open: true, 
-    port: 3008, 
+    port: 3009, 
   },
 };
