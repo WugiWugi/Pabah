@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "deploy": "git subtree push --prefix dist origin gh-pages",
     "build": "webpack",
     "start": "webpack serve --open"
   },
@@ -25,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/WugiWugi/Pabah/issues"
   },
-"homepage": "https://WugiWugi.github.io/Pabah/",
+  "homepage": "https://WugiWugi.github.io/Pabah/",
   "dependencies": {
     "accepts": "^1.3.8",
     "acorn": "^8.14.1",
